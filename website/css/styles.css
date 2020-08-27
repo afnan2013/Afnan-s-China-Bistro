@@ -4,3 +4,47 @@ body {
 	background-color: #004044;
 	font-family: 'Oxygen', sans-serif;
 }
+
+#header-nav {
+	background-color: #f6b319;
+	border: 0px;
+	border-radius: 0px;
+}
+
+#logo-img {
+	background: url('../images/restaurant-logo.png') no-repeat;
+	height: 150px;
+	width: 150px;
+	margin: 10px 15px 10px 0px;
+}
+
+.navbar-brand {
+	padding-top: 25px;
+}
+
+.navbar-brand h1{
+	font-size: 1.5em;
+	font-family: 'Lora', serif;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #557c3e;
+	text-shadow: 1px 1px 1px #222;
+    margin-top: 5px;
+    margin-bottom: 0;
+    line-height: .75;
+}
+
+.navbar-brand a:hover, .navbar-brand a:focus {
+  text-decoration: none;
+}
+
+.navbar-brand p {  /* Koshar Cerification Text */
+	margin-top: 15px;
+	color: #000;
+	text-transform: uppercase;
+	font-size: 0.7em;
+}
+
+.navbar-brand span {  /* Koshar Cerification Alignment */
+	vertical-align: middle;
+}
