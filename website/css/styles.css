@@ -81,3 +81,13 @@ body {
 	padding-right: 15px;
 	color: #557c3e;
 }
+
+.navbar-header button.navbar-toggle, .navbar-header button.navbar-toggle span {
+	border: 1px solid #004044;
+}
+
+.navbar-header button.navbar-toggle {
+	clear: both;
+	/*background: #EBEDEF; */
+ 	margin-bottom: 10px;
+}
