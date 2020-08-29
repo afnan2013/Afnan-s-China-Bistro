@@ -248,8 +248,13 @@ body {
   /* End Header */
   
   /* Home page */
-  #menu-tile, #specials-tile {
+  #menu-tile, #specials-tile{
     width: 280px;
     margin: 0 auto 15px;
+  }
+
+  #map-tile{
+  	width: 75vw;
+  	margin: 0 auto 15px; 
   }
 }
