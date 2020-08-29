@@ -204,6 +204,14 @@ body {
 	color: #fff;
 }
 
+.category-tile:hover{
+	box-shadow: 0px 1px 5px 1px #cccccc;
+}
+
+#menu-categories-title + div {
+	margin-bottom: 50px;
+	font-size: 0.8em;
+}
 /* END MENU CATEGORY PAGE */
 
 /********** Large devices only **********/
