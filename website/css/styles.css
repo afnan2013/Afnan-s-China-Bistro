@@ -160,23 +160,22 @@ body {
 	line-height: 2;
 }
 
-#hours span, #address span {
+#hours span, #address span, #testimonials span {
 	font-size: 1.4em;
 }
 
 #address p {
-  color: #557c3e;
-  font-size: .8em;
+  color: #A6E22B;
+  font-size: .9em;
   line-height: 1.8;
 }
 
-#testimonials {
+#testimonials p{
 	font-style: italic;
+	margin-top: 20px;
+	font-size: .9em;
 }
 
-#testimonials p:nth-child(2){
-	margin-top: 25px;
-}
 /* END FOOTER */
 
 /********** Large devices only **********/
@@ -279,7 +278,22 @@ body {
 		width: 100%;
 		margin: 0px auto 20px auto;
 	}
+	/* END HOME PAGE */
 
+	/* FOOTER */
+	.panel-footer section {
+		margin-bottom: 30px;
+		text-align: center;
+	}
+
+	.panel-footer section:nth-child(3) {
+		margin-bottom: 0px;
+	}
+
+	.panel-footer section hr{
+		width: 50%;
+	}
+	/* FOOTER */
 }
 
 /********** Super extra small devices Only :-) (e.g., iPhone 4) **********/
