@@ -102,6 +102,29 @@ body {
 	border: 2px solid #004030;
 }
 
+#menu-tile, #specials-tile, #map-tile {
+	position: relative;
+	height: 250px;
+	background: url(../images/menu-tile.jpg) no-repeat;
+}
+
+#menu-tile:hover, #specials-tile:hover, #map-tile:hover {
+	border: 2px solid #fff;
+}
+
+#home-tiles a span{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background-color: #000;
+	opacity: 0.7;
+	width: 100%;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 1.3em;
+	color: #fff;
+}
+
 /********** Large devices only **********/
 @media (min-width: 1200px) {
 
@@ -191,7 +214,6 @@ body {
 	.container .jumbotron {
 		padding: 0px;
 		margin-top: 20px;
-	
 	} 
 
 }
