@@ -13,7 +13,7 @@ body {
 }
 
 #logo-img {
-	background: url('../images/restaurant-logo.png') no-repeat;
+	background: url('../images/restaurant-logo_large.png') no-repeat;
 	height: 150px;
 	width: 150px;
 	margin: 10px 15px 10px 0px;
@@ -109,6 +109,7 @@ body {
 	width: 100%;
 	border: 2px solid #004030;
 	overflow: hidden;
+	border-radius: 10px;
 }
 
 #menu-tile:hover, #specials-tile:hover, #map-tile:hover {
@@ -138,6 +139,17 @@ body {
 #specials-tile {
 	background: url('../images/specials-tile.jpg') no-repeat;
 	background-position: center;
+}
+
+/* END HOME PAGE */
+
+/* FOOTER */
+.panel-footer {
+	margin-top: 30px;
+	padding-top: 35px;
+	padding-bottom: 30px;
+	background-color: #222;
+	border-top: 0px; 
 }
 
 /********** Large devices only **********/
@@ -257,6 +269,4 @@ body {
     width: 280px;
     margin: 0 auto 15px;
   }
-
-  
 }
