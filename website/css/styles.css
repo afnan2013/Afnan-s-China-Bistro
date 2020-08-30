@@ -4,7 +4,6 @@ body {
 	background-color: #004044;
 	font-family: 'Oxygen', sans-serif;
 }
-
 /* HEADER */
 #header-nav {
 	background-color: #f6b319;
@@ -24,7 +23,7 @@ body {
 }
 
 .navbar-brand h1{ 	/* Restaurant's Name */
-	font-size: 1.5em;
+	font-size: 1.6em;
 	font-family: 'Lora', serif;
 	text-transform: uppercase;
 	font-weight: bold;
@@ -214,8 +213,70 @@ body {
 }
 /* END MENU CATEGORY PAGE */
 
+/* SINGLE CATEGORY PAGE */
+.menu-item-tile {
+	margin-bottom: 25px;
+}
+
+.menu-item-tile hr {
+	width: 80%;
+}
+
+.menu-item-tile .menu-item-price {
+	font-size: 1.1em;
+	text-align: right;
+  margin-top: -15px;
+  margin-right: -15px;
+}
+
+.menu-item-tile .menu-item-price span{
+	font-size: 0.6em;
+} 
+
+.menu-item-photo {
+	position: relative;	
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: -15px;
+  border: 2px solid #004044;
+  padding: 0px;
+  max-width: 250px;
+  overflow: hidden;
+}
+
+.menu-item-photo:hover{
+	box-shadow: 0px 1px 5px 1px #cccccc;
+}
+
+.menu-item-photo div{
+	position: absolute;
+	bottom: 0px;
+	right: 0px;	
+	width: 80px;
+  background-color: #557c3e;
+  text-align: center;
+}
+
+.menu-item-description {
+	padding-right: 20px;
+}
+.menu-item-description h3 {
+	margin: 0 0 10px;
+}
+
+.menu-item-description .menu-item-details{
+	 font-size: .9em;
+	 font-style: italic;
+}
+
+/* END SIMPLE CATEGORY PAGE */
+
 /********** Large devices only **********/
 @media (min-width: 1200px) {
+
+	.navbar-brand h1{ 	/* Restaurant's Name */
+		font-size: 1.9em;
+	}
 
 	.container .jumbotron {
 		background: url('../images/jumbotron_1200.jpg') no-repeat;
@@ -242,6 +303,9 @@ body {
 
 /********** Small devices only **********/
 @media (min-width: 768px) and (max-width: 991px) {
+
+	
+
 	.container .jumbotron {
 		background: url('../images/jumbotron_768.jpg') no-repeat;
 		height: 432px;
@@ -252,6 +316,7 @@ body {
 @media (max-width: 767px ) {
 
 	/* Header */
+
 	.navbar-brand {
 		padding-top: 10px;
 		height: 80px; 
@@ -330,6 +395,21 @@ body {
 		width: 50%;
 	}
 	/* FOOTER */
+
+	/* SINGLE CATEGORY PAGE */
+	.menu-item-photo{
+		margin-right: auto;
+	}
+
+	.menu-item-tile .menu-item-price {
+		text-align: center;
+		margin-bottom: 15px;
+	}
+
+	.menu-item-description {
+		text-align: center;
+	}
+	/* END SINGLE CATEGORY PAGE */
 }
 
 /********** Super extra small devices Only :-) (e.g., iPhone 4) **********/
