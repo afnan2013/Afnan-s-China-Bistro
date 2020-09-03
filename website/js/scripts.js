@@ -61,7 +61,7 @@ $(function () {	// Same as document.addEventListener("DOMContentLoaded"...
 
 
 	// Load the menu categories view
-	abc.loadMenuCategories = function () {
+	abc.loadMenuCategories = function (short_name) {
 		showLoader("#main-content");
 		$ajaxUtils.sendGetRequest(allCategoriesUrl, buildAndShowCategoriesHTML);
 	};
@@ -102,7 +102,14 @@ $(function () {	// Same as document.addEventListener("DOMContentLoaded"...
 		return finalHtml;
 	}
 
+
+	abc.loadMenuItems = function () {
+		showLoader("#main-content");
+
+		$ajaxUtils.sendGetRequest()
+	};
+
 	global.$abc = abc;
-	
+
 })(window);
 
