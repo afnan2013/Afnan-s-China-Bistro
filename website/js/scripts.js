@@ -50,6 +50,21 @@ $(function () {	// Same as document.addEventListener("DOMContentLoaded"...
 		string = string.replace(new RegExp(propToReplace, 'g'), propValue);
 		return string;
 	}
+	
+	// Remove the class 'active' from home and switch to Menu button
+	var switchMenuToActive = function () {
+	  // Remove 'active' from home button
+	  var classes = document.querySelector("#navHomeButton").className;
+	  classes = classes.replace(new RegExp("active", "g"), "");
+	  document.querySelector("#navHomeButton").className = classes;
+
+	  // Add 'active' to menu button if not already there
+	  classes = document.querySelector("#navMenuButton").className;
+	  if (classes.indexOf("active") == -1) {
+	    classes += " active";
+	    document.querySelector("#navMenuButton").className = classes;
+	  }
+	};
 
 	// On page load (before images or CSS)
 	document.addEventListener("DOMContentLoaded", function (event) {
@@ -79,6 +94,8 @@ $(function () {	// Same as document.addEventListener("DOMContentLoaded"...
 				// Retrieve single category snippet
 				$ajaxUtils.sendGetRequest(categoryHtml, 
 					function (categoryHtmlRes) {
+						// Switch CSS class active to menu button
+          	switchMenuToActive();
 						var categoriesViewHtml = buildCategoriesViewHtml(categoriesRes, categoriesTitleHtmlRes, categoryHtmlRes);
 						insertHtml("#main-content", categoriesViewHtml);
 				},false);
@@ -116,9 +133,11 @@ $(function () {	// Same as document.addEventListener("DOMContentLoaded"...
 		$ajaxUtils.sendGetRequest(menuItemTitleHtml, function (menuItemTitleHtmlRes) {
 			//console.log(menuItemTitleHtmlRes);
 			$ajaxUtils.sendGetRequest(menuItemHtml, function (menuItemHtmlRes) {
+				// Switch CSS class active to menu button
+         switchMenuToActive();
 				//console.log(menuItemHtmlRes);
 				var menuItemView = buildMenuItemsViewHtml(menuItemsRes, menuItemTitleHtmlRes, menuItemHtmlRes);
-				console.log(menuItemView);
+				//console.log(menuItemView);
 				insertHtml("#main-content", menuItemView);
 			}, false);
 		}, false);
