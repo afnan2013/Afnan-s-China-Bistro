@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="LunchCheckApp" lang="en">
+<html ng-app="LunchCheck" lang="en">
   <head>
     <title>Lunch Checker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +8,7 @@
     <script type="text/javascript" src="app.js"></script>
     <style>
       .message { font-size: 1.3em; font-weight: bold; }
+
     </style>
   </head>
 <body>
@@ -15,6 +16,7 @@
      <h1>Lunch Checker</h1>
 
          <div class="form-group">
+             <!-- I do NOT consider an empty item, i.e., , , as an item towards to the count -->
              <input id="lunch-menu" type="text" ng-model="lunch"
              placeholder="list comma separated dishes you usually have for lunch"
              class="form-control">
@@ -22,7 +24,7 @@
          <div class="form-group">
              <button ng-click="checkTooMuch();" class="btn btn-default">Check If Too Much</button>
          </div>
-         <div id="message" class="form-group message">
+         <div id="message" class="form-group message" style="color: {{color}}; border: 0.5px solid {{color}};">
             {{message}} 
          </div>
    </div>
