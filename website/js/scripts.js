@@ -1,3 +1,6 @@
+
+
+
 $(function () {	// Same as document.addEventListener("DOMContentLoaded"...	
 	// Same as document.querySelector("#navbarToggle").addEventListener("blur",...
 	$("#navbarToggle").blur(function(event) {
@@ -200,4 +203,3 @@ $(function () {	// Same as document.addEventListener("DOMContentLoaded"...
 	global.$abc = abc;
 
 })(window);
-

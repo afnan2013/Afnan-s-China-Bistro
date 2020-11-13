@@ -1,0 +1,75 @@
+/* ---- reset ---- */
+
+body {
+  margin: 0;
+  
+}
+
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+
+/* ---- particles.js container ---- */
+
+#particles-js {
+  position: relative;
+  width: 1903px;
+  height: 969px;
+  background-color: #0C2B25;
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+/* ---- stats.js ---- */
+/* ---- stats.js ---- */
+
+.count-particles{
+  background: transparent;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  font-size: 32px;
+  color: white;
+  letter-spacing: 2px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.js-count-particles{
+  font-size: 1.1em;
+}
+
+#stats,
+.count-particles{
+  -webkit-user-select: none;
+}
+
+#stats{
+  border-radius: 3px 3px 0 0;
+  overflow: hidden;
+}
+
+.count-particles{
+  border-radius: 0 0 3px 3px;
+}
+
+#sitelogo{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -150px;
+  margin-left: -140px;  /* half of your logo size should be minus*/
+}
+
+#exploreSite {
+  background:transparent;
+  font-size: 40px;
+  color: white;
+  border-color: transparent;
+  margin-top: 100px;
+  letter-spacing: 3px;
+  margin-left: -82px;
+  font-family: Helvetica, Arial, sans-serif;
+}
