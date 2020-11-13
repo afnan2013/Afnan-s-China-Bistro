@@ -68,7 +68,7 @@ canvas {
   font-size: 40px;
   color: white;
   border-color: transparent;
-  margin-top: 100px;
+  margin-top: 40px;
   letter-spacing: 3px;
   margin-left: -82px;
   font-family: Helvetica, Arial, sans-serif;
@@ -80,3 +80,39 @@ canvas {
   margin-right: auto;
   width: 80%;
 }
+
+/* FOOTER */
+.panel-footer {
+  margin-top: 30px;
+  padding-top: 35px;
+  padding-bottom: 30px;
+  background-color: #222;
+  border-top: 0px; 
+  color: white;
+}
+
+.panel-footer div.row {
+  margin-bottom: 30px;
+}
+
+#hours, #address {
+  line-height: 2;
+}
+
+#hours span, #address span, #testimonials span {
+  font-size: 1.4em;
+}
+
+#address p {
+  color: #A6E22B;
+  font-size: .9em;
+  line-height: 1.8;
+}
+
+#testimonials p{
+  font-style: italic;
+  margin-top: 20px;
+  font-size: .9em;
+}
+
+/* END FOOTER */
