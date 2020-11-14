@@ -35,8 +35,134 @@
 <script src="../particles.js"></script>
 <script src="js/app.js"></script>
 
-<div id="cover-content">
-  <img src="images/cover.jpg" class="center">
+<header id="header-nav" class="navbar navbar-default">
+    <!-- particles.js container -->
+    
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a href="index.html" class="pull-left visible-md visible-lg">
+          <div id="logo-img"></div>
+        </a>
+
+        <div class="navbar-brand">
+          <a href="index.html"><h1>Prime Automation Ltm</h1></a>
+        </div>
+
+        <button id="navbarToggle" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+      </div>
+
+      <div id="collapsable-nav" class="collapse navbar-collapse">
+
+          <div class="navbar-info">
+            <div class="navbar-info-email">
+                <span id="info-email">info.primegroupbd@gmail.com</span> 
+                 <a href="tel:+880 248953846">
+                      <span>+880 248953846</span></a>
+            </div>
+          <br>
+            <ul id="nav-list" class="nav navbar-nav">
+              <li id="navHomeButton" class="active">
+                <a href="#">HOME</a>
+              </li>
+              <li id="navMenuButton">
+                <a href="#header-nav">ABOUT</a>
+              </li>
+              <li>
+                <a href="#brandSection" >BRANDS</a>
+              </li>
+              <li>
+                <a href="#productSection" >PRODUCTS</a>
+              </li>
+              <li>
+                <a href="#serviceSection">SERVICES</a>
+              </li>
+              <li>
+                <a href="#contactSection">CONTACT</a>
+              </li>
+            </ul><!-- #nav-list -->
+          </div>
+           
+      </div><!-- .collapse .navbar-collapse -->
+    </div>
+</header>
+
+
+<div id="main-content" class="container-fluid">
+
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="max-height: 600px; overflow: hidden;">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="images/slider1.jpg" alt="...">
+        <div class="carousel-caption">
+          ...
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/slider2.jpg" alt="...">
+        <div class="carousel-caption">
+          ...
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/slider3.jpg" alt="...">
+        <div class="carousel-caption">
+          ...
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  <section id="aboutSection">
+    <h1 class="sectionTitle text-center">ABOUT</h1> 
+    <p>Technology ("science of craft", from Greek τέχνη, techne, "art, skill, cunning of hand"; and -λογία, -
+    logia[2]) is the sum of techniques, skills, methods, and processes used in the production of goods or
+    services or in the accomplishment of objectives, such as scientific investigation. Technology can be
+    the knowledge of techniques, processes, and the like, or it can be embedded in machines to allow.</p>
+
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-4 text-center">COMPANY PROFILE <br>VIDEO</h1>
+        </div>
+    </div>
+    </div>
+    
+  </section>
+  <section id="brandSection">
+    <h1 class="sectionTitle text-center">OUR BRAND</h1>
+    <img src="images/brand.PNG" alt="Picture of Restaurent" class="center img-responsive">
+  </section>
+  <section id="productSection">
+    <h1 class="sectionTitle text-center">PRODUCTS</h1>
+  </section>
+  <section id="serviceSection">
+    <h1 class="sectionTitle text-center">SERVICES</h1>
+  </section>
+  <section id="contactSection">
+    <h1 class="sectionTitle text-center">CONTACTS</h1>
+  </section>
+</div>
 
   <footer class="panel-footer">
     <div class="container">
@@ -68,11 +194,12 @@
 </div>
 <!-- stats.js -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
   <script> 
   $("#exploreSite").click(function() {
     $('html, body').animate({
-        scrollTop: $("#cover-content").offset().top
-    }, 1500);
+        scrollTop: $("#header-nav").offset().top
+    }, 800);
   });
   </script>
 </body>

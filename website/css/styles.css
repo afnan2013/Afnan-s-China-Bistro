@@ -102,7 +102,7 @@ body {
 
 .container .jumbotron {
 	box-shadow: 0 0 50px #004030;
-	border: 2px solid #004030;
+	border: 3px solid #004030;
 }
 
 #menu-tile, #specials-tile, #map-tile {

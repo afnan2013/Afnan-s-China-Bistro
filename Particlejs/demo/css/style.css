@@ -1,4 +1,7 @@
 /* ---- reset ---- */
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -76,11 +79,157 @@ canvas {
 
 
 
-.center {
+/* HEADER */
+#header-nav {
+  margin-top: 20px;
+  background-color: #ffffff;
+  border: 0px;
+  border-radius: 0px;
+}
+
+#logo-img {
+  background: url('../images/logoP.PNG') no-repeat;
+  height: 110px;
+  width: 110px;
+  margin: 10px 15px 10px 200px;
+}
+
+.navbar-brand {
+  padding-top: 25px;
+}
+
+.navbar-brand h1{   /* Restaurant's Name */
+  font-size: 1.9em;
+  font-family: 'Lora', serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #0C2B25;
+  text-shadow: 1px 1px 1px #222;
+  margin-top: 5px;
+  margin-bottom: 0;
+  line-height: .75;
+}
+
+.navbar-brand a:hover, .navbar-brand a:focus {
+  text-decoration: none;
+}
+
+.navbar-brand p {  /* Koshar Cerification Text */
+  margin-top: 15px;
+  color: #000;
+  text-transform: uppercase;
+  font-size: 0.7em;
+}
+
+.navbar-brand span {  /* Koshar Cerification Alignment */
+  vertical-align: middle;
+}
+
+.navbar-info{
+  float: right;
+  margin-top: 25px;
+  margin-right: 200px;
+  font-size: 1.2em;
+}
+
+.navbar-info .navbar-info-email{
+  float: right;
+}
+
+#info-email{
+  padding-right: 20px;
+}
+
+#nav-list {
+  margin-top: 20px;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+#nav-list a {
+  color: #004044;
+  text-align: center;
+}
+
+#nav-list a:hover {
+  background: #DBDDE0;
+}
+
+#nav-list a span {
+  font-size: 1.8em;
+}
+
+.navbar-info .navbar-info-email {
+  padding-right: 22px;
+}
+
+#phone {
+  margin-top: 5px;
+}
+
+#phone a {
+  text-align: right;
+  padding-bottom: 0px;
+}
+
+#phone div {
+  text-align: right;
+  padding-right: 15px;
+  color: #557c3e;
+}
+
+.navbar-header button.navbar-toggle, .navbar-header button.navbar-toggle span {
+  border: 1px solid #004044;
+}
+
+.navbar-header button.navbar-toggle {
+  clear: both;
+  /*background: #EBEDEF; */
+  margin-top: -30px;
+}
+
+/* END HEADER */
+
+.container-fluid {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+#aboutSection .jumbotron {
+  box-shadow: 0 0 10px #004030;
+  background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg); 
+  height: 550px;
+}
+
+#aboutSection .jumbotron h1 {
+  margin-top: 150px;
+  color: white;
+  font-family:  Helvetica, Arial, sans-serif;
+}
+
+
+#brandSection .center {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 80%;
+}
+
+.sectionTitle { padding: 20px; margin: 70px 10px 20px 10px;  font-size: 3em;
+font-weight: bold; font-family: 'Lora', serif;  text-shadow: 1px 1px 1px #222; color: #145629;
+}
+
+
+#aboutSection p {
+  padding: 10px;
+  margin-bottom: 45px;
+  margin-left: 300px;
+  margin-right: 300px;
+  font-size: 1.5em;
+  color: green;
+  line-height: 40px;
+
+  font-family:  Helvetica, Arial, sans-serif;
 }
 
 /* FOOTER */
