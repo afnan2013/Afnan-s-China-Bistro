@@ -5,7 +5,7 @@
 
 body {
   margin: 0;
-  
+  font-family: 'Roboto', sans-serif;
 }
 
 canvas {
@@ -44,19 +44,11 @@ canvas {
   font-size: 1.1em;
 }
 
-#stats,
-.count-particles{
+#stats, .count-particles{
   -webkit-user-select: none;
 }
 
-#stats{
-  border-radius: 3px 3px 0 0;
-  overflow: hidden;
-}
 
-.count-particles{
-  border-radius: 0 0 3px 3px;
-}
 
 #sitelogo{
   position: absolute;
@@ -66,16 +58,9 @@ canvas {
   margin-left: -140px;  /* half of your logo size should be minus*/
 }
 
-#exploreSite {
-  background:transparent;
-  font-size: 40px;
-  color: white;
-  border-color: transparent;
-  margin-top: 40px;
-  letter-spacing: 3px;
-  margin-left: -82px;
-  font-family: Helvetica, Arial, sans-serif;
-}
+#exploreSite { background:transparent; font-size: 40px; color: white;
+border-color: transparent; margin-top: 40px; margin-left: -82px;
+letter-spacing: 3px; font-family: Helvetica, Arial, sans-serif; }
 
 
 
@@ -88,9 +73,6 @@ canvas {
 }
 
 #logo-img {
-  background: url('../images/logoP.PNG') no-repeat;
-  height: 110px;
-  width: 110px;
   margin: 10px 15px 10px 200px;
 }
 
@@ -127,7 +109,6 @@ canvas {
 
 .navbar-info{
   float: right;
-  margin-top: 25px;
   margin-right: 200px;
   font-size: 1.2em;
 }
@@ -141,9 +122,10 @@ canvas {
 }
 
 #nav-list {
-  margin-top: 20px;
-  font-size: 1.1em;
+  margin-top: 85px;
+  font-size: 1.2em;
   font-weight: bold;
+  letter-spacing: 2px;
 }
 
 #nav-list a {
@@ -215,8 +197,13 @@ canvas {
   width: 80%;
 }
 
-.sectionTitle { padding: 20px; margin: 70px 10px 20px 10px;  font-size: 3em;
-font-weight: bold; font-family: 'Lora', serif;  text-shadow: 1px 1px 1px #222; color: #145629;
+.sectionTitle { 
+  padding: 20px; 
+  margin: 100px 10px 40px 10px;  
+  font-size: 4em;
+  font-weight: bold; 
+  font-family: 'Roboto', sans-serif; 
+  color: #145629;
 }
 
 
@@ -225,11 +212,65 @@ font-weight: bold; font-family: 'Lora', serif;  text-shadow: 1px 1px 1px #222; c
   margin-bottom: 45px;
   margin-left: 300px;
   margin-right: 300px;
-  font-size: 1.5em;
+  font-size: 1.7em;
   color: green;
   line-height: 40px;
 
-  font-family:  Helvetica, Arial, sans-serif;
+  font-family:  'Roboto', sans-serif;;
+}
+
+
+#productSection .container .row{
+  margin-bottom: 100px;
+}
+
+#productSection .container .row .productDetails{
+  font-size: 1.7em;
+  padding:60px;
+}
+
+#productSection .container .row #lastProductDetails{
+  padding: 50px 20px 20px 20px;
+}
+
+
+#productSection .container .row .center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+#serviceSection .container .row .column {
+  text-align : center;
+  border: 2px solid #145629;
+  border-radius: 0px;
+  padding: 15px;
+  font-size: 1.7em;
+  min-height: 650px;
+}
+
+#serviceSection .container .row .column img{
+  padding: 20px;
+}
+
+#serviceSection .container .row .column h2 {
+  margin-bottom: 25px;
+}
+
+#contactSection .row{
+  margin: 40px 0px;
+  color: #145629;
+  
+}
+
+#contactSection .row h1{
+  font-weight: bold;
+}
+
+
+#contactSection .row h2{
+  font-size: 2.4em;
 }
 
 /* FOOTER */
@@ -237,7 +278,7 @@ font-weight: bold; font-family: 'Lora', serif;  text-shadow: 1px 1px 1px #222; c
   margin-top: 30px;
   padding-top: 35px;
   padding-bottom: 30px;
-  background-color: #222;
+  background-color: #163A1A;
   border-top: 0px; 
   color: white;
 }
@@ -267,3 +308,12 @@ font-weight: bold; font-family: 'Lora', serif;  text-shadow: 1px 1px 1px #222; c
 }
 
 /* END FOOTER */
+
+/********** Large devices only **********/
+@media (min-width: 1200px) {
+
+  #serviceSection .container, #contactSection .container, .panel-footer .container{
+    width: 1300px;
+  }
+  
+}

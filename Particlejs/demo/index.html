@@ -6,20 +6,23 @@
   <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
   <meta name="author" content="Vincent Garreau" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+  <!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
   <link rel="stylesheet" media="screen" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;900&display=swap" rel="stylesheet"> 
   
 </head>
 <body>
-
+<!-- Cover Page View Starts -->
 <!-- count particles -->
 
 <!-- particles.js container -->
 <div id="particles-js"></div>
 
 <div class="count-particles">
-  <span class="js-count-particles"><p>Prime Automation Ltd</p></span> 
-  
+  <span class="js-count-particles"><p>Prime Automation Ltd</p></span>  
 </div>
 <div id='sitelogo'>
   <img src="images/logo.png" width="280px" height="300px">
@@ -29,24 +32,23 @@
   
 </div>
 
-
-
 <!-- scripts -->
 <script src="../particles.js"></script>
 <script src="js/app.js"></script>
+<!-- particles.js container -->
+
+<!-- Cover Page View Ends -->
 
 <header id="header-nav" class="navbar navbar-default">
-    <!-- particles.js container -->
+    
     
     <div class="container-fluid">
       <div class="navbar-header">
         <a href="index.html" class="pull-left visible-md visible-lg">
-          <div id="logo-img"></div>
+          <div id="logo-img">
+            <img src="images/logo-ss.PNG" width="300px" height="140px">
+          </div>
         </a>
-
-        <div class="navbar-brand">
-          <a href="index.html"><h1>Prime Automation Ltm</h1></a>
-        </div>
 
         <button id="navbarToggle" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
@@ -91,7 +93,7 @@
     </div>
 </header>
 
-
+<!-- Start of #main-content -->
 <div id="main-content" class="container-fluid">
 
   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="max-height: 600px; overflow: hidden;">
@@ -134,6 +136,7 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+
   <section id="aboutSection">
     <h1 class="sectionTitle text-center">ABOUT</h1> 
     <p>Technology ("science of craft", from Greek τέχνη, techne, "art, skill, cunning of hand"; and -λογία, -
@@ -155,36 +158,196 @@
   </section>
   <section id="productSection">
     <h1 class="sectionTitle text-center">PRODUCTS</h1>
+    <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 productDetails">
+            <p>We provide production systems – designed
+              to save both time and space. Eton Systems
+              eliminates manual transportation and adds
+              more value to your products. Real-time
+              traceability of individual units for complete
+              sequencing control throughout your
+              production line.</p>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <img src="images/product-01.PNG">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-sm-6">
+              <img src="images/product-02.PNG">
+            </div>
+          <div class="col-md-6 col-sm-6 productDetails">
+            <p>ROTONDI GROUP SRL is a company
+                based in the outskirts of Milan. We
+                produce hi-tech pressing equipment
+                for mens and ladies jackets, trousers,
+                jeans, shirts and knitwear. Two
+                advanced production plants of
+                almost 10,000 square meters
+                (100,000 square feet) give an
+                integrated manufacturing cycle from
+                design to completion using the latest
+                automatic cutters and robots.</p>
+          </div>
+          
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-sm-6 productDetails">
+            <p>ROTONDI GROUP SRL is a company
+                based in the outskirts of Milan. We
+                produce hi-tech pressing equipment
+                for mens and ladies jackets, trousers,
+                jeans, shirts and knitwear. Two
+                advanced production plants of
+                almost 10,000 square meters
+                (100,000 square feet) give an
+                integrated manufacturing cycle from
+                design to completion using the latest
+                automatic cutters and robots.</p>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <img src="images/product-03.PNG">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-sm-6">
+            <img src="images/product-04.PNG" class="center">
+          </div>
+          <div id="lastProductDetails" class="col-md-6 col-sm-6 productDetails">
+            <p>Enmos, who has a grasp of the fabric dyeing processes,
+                collects all the experience and process knowledge from
+                the past years, on the Simplex control computers and
+                Focus Centeral Monitoring software. <br><br>
+                Simplex dyeing machines with state-of-the-art
+                technology in different models and capacities, fully
+                control and operate machines in different capacities,
+                brands, models and technologies with specially
+                designed commands for fabric dyeing machines.</p>
+          </div>
+          
+        </div>
+    </div>
   </section>
   <section id="serviceSection">
     <h1 class="sectionTitle text-center">SERVICES</h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 column">
+          <img src="images/all logo-10.png" class="img-responsive">
+          <h2>Sale of new product</h2>
+          <p>Technology ("science of
+            craft", from art, skill,
+            cunning of hand"; and -
+            λογία, -logia[2]) is the
+            sum of techniques,
+            skills, methods, and
+            processes used in the</p>
+        </div>
+        <div class="col-md-3 column">
+          <img src="images/all logo-12.png" class="img-responsive">
+          <h2>Repairing of machine</h2>
+          <p>Technology ("science of
+              craft", is the sum of
+              techniques, skills,
+              methods, and processes
+              used in the production
+              of goods or services or
+              in the accomplishment
+              of objectives, such as</p>
+        </div>
+        <div class="col-md-3 column">
+          <img src="images/all logo-13.png" class="img-responsive">
+          <h2>Sale of spare parts</h2>
+          <p>Technology ("science of
+              craft", from art, skill,
+              cunning of hand"; and -
+              λογία, -logia[2]) is the
+              sum of techniques,
+              skills, methods, and
+              processes used in the
+              production of goods or
+              services or in the</p>
+        </div>
+        <div class="col-md-3 column">
+          <img src="images/all logo-11.png" class="img-responsive">
+          <h2>Technical support</h2>
+          <p>Technology ("science of
+              craft", from art, skill,
+              cunning of hand"; and -
+              λογία, -logia[2]) is the
+              sum of techniques,
+              skills, methods, and
+              processes used in the
+              production of goods or
+              services or in the</p>
+        </div>
+      </div>
+    </div>
   </section>
   <section id="contactSection">
     <h1 class="sectionTitle text-center">CONTACTS</h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <a href="https://goo.gl/maps/AhaJsfGqQb47tnh3A" target="_blank">
+            <div id="map-tile"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3648.364181213347!2d90.39858161543303!3d23.876701489855645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c4399d7a5e37%3A0xc2a4ee5451f14290!2sAkash%20Plaza!5e0!3m2!1sen!2sbd!4v1605646125086!5m2!1sen!2sbd" width="650" height="350" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></div>
+          </a>
+        </div>
+        <div class="col-md-5 text-center contactDetails">
+          <h1>AKAS PLAZA</h1>
+          <h2>5th Floor, Room # 501 <br>
+              Sector # 9, Uttara, Dhaka,<br>
+              Bangladesh</h2>
+          <h2>info.primegroupbd@gmail.com<br>
+              +880 248953846</h2>
+        </div>
+      </div>
+    </div>
   </section>
 </div>
-
+<!-- End of #main-content -->
   <footer class="panel-footer">
     <div class="container">
       <div class="row">
-        <section id="hours" class="col-sm-4">
-          <span>Hours:</span><br>
-          Sun-Thurs: 11:15am - 10:00pm<br>
-          Fri: 11:15am - 2:30pm<br>
-          Saturday Closed
+        <section id="hours" class="col-sm-3">
+          <h1>INFORMATION</h1>
+          <h3>Our Company</h3>
+          <h3>Projects</h3>
+          <h3>Our services</h3>
+          <h3>Career</h3>
+          <h3>Core Values</h3>
+          <h3>Company History</h3>
+          <h3>FAQ</h3>
           <hr class="visible-xs">
         </section>
-        <section id="address" class="col-sm-4">
-          <span>Address:</span><br>
-          7105 Reisterstown Road<br>
-          Baltimore, MD 21215
-          <p>* Delivery area within 3-4 miles, with minimum order of $20 plus $3 charge for all deliveries.</p>
+        <section id="address" class="col-sm-5">
+          <form>
+            <div class="form-group">
+              <label for="exampleInputName2">Name</label>
+              <input type="text" class="form-control text-center" id="exampleInputName2" placeholder="Enter Your Name">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <label for="exampleMessage">Message</label>
+              <textarea class="form-control" rows="4" placeholder="Message"></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-success">Submit</button>
+          </form>
           <hr class="visible-xs">
         </section>
         <section id="testimonials" class="col-sm-4">
-          <span>Reviews:</span><br>
-          <p>"The best Chinese restaurant I've been to! And that's saying a lot, since I've been to many!"</p>
-          <p>"Amazing food! Great service! Couldn't ask for more! I'll be back again and again!"</p>
+          <img src="images/logo-fb.PNG">
+          <img src="images/logo-twit.PNG">
+          <img src="images/logo-yt.PNG">
+          <img src="images/logo-wa.PNG">
 
         </section>  
       </div>
@@ -194,7 +357,9 @@
 </div>
 <!-- stats.js -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+<!-- <script type="text/javascript" src="js/bootstrap.min.js"></script> -->
   <script> 
   $("#exploreSite").click(function() {
     $('html, body').animate({
