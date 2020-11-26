@@ -1,7 +1,7 @@
 // listen for auth status changes
 auth.onAuthStateChanged(user => {
   if (user) {
-    location.replace("../dashboard.html")
+    location.replace("dashboard.html")
   } else {
     console.log('user logged out');
   }
