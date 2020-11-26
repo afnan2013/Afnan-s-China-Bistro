@@ -1,73 +1,3 @@
-
-// load Account Wrapper
-const loadAccountWrap = (user) => {
-
-  const accountWrap = document.querySelector('.account-wrap');
-  if (user) {
-    let html = '';
-    const li = `
-      <div class="account-item clearfix js-item-menu">
-          <div class="image">
-              <img src="images/icon/avatar-01.jpg" alt="John Doe" />
-          </div>
-          <div class="content">
-              <a class="js-acc-btn" href="#">john doe</a>
-          </div>
-          <div class="account-dropdown js-dropdown">
-              <div class="info clearfix">
-                  <div class="image">
-                      <a href="#">
-                          <img src="images/icon/avatar-01.jpg" alt="John Doe" />
-                      </a>
-                  </div>
-                  <div class="content">
-                      <h5 class="name">
-                          <a href="#">john doe</a>
-                      </h5>
-                      <span class="email">${user.email}</span>
-                  </div>
-              </div>
-              <div class="account-dropdown__body">
-                  <div class="account-dropdown__item">
-                      <a href="#">
-                          <i class="zmdi zmdi-account"></i>Account</a>
-                  </div>
-                  <div class="account-dropdown__item">
-                      <a href="#">
-                          <i class="zmdi zmdi-settings"></i>Settings</a>
-                  </div>
-              </div>
-              <div class="account-dropdown__footer">
-                  <a href="#" class="logout">
-                      <i class="zmdi zmdi-power"></i>Logout</a>
-              </div>
-          </div>
-      </div>
-    `;
-    html += li;
-    accountWrap.innerHTML = html;
-  } else {
-    accountWrap.innerHTML = '<h5 class="center-align">Login to view guides</h5>';
-  }
-  
-
-};
-
-document.addEventListener("DOMContentLoaded", function (event) {
-    auth.onAuthStateChanged(user => {
-      if (user) {
-        console.log("user logged in");
-        //location.replace("../dashboard.html");
-        //loadAccountWrap(user);
-      } else {
-        location.replace("../index.html");
-        console.log("user logged out");
-      }
-    });
-});
-
-
-
 (function ($) {
   // USE STRICT
   "use strict";
@@ -187,7 +117,76 @@ document.addEventListener("DOMContentLoaded", function (event) {
 })(jQuery);
 
 
+
+(function (global){
+
+  // pal means Prime Automation Ltd
+  var pal = {};
+
+  // load Account Wrapper in the Header section 
+  pal.loadAccountWrap = (user) => {
+
+    const cardAccount = document.querySelector('#card-account');
+    const photoAccount = document.querySelector('#photo-account');
+    const nameAccount = document.querySelector('#name-account');
+
+    if (user) {
+      
+      let html = '';
+      const li = `
+        <div class="image">
+            <a href="#">
+                <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+            </a>
+        </div>
+        <div class="content">
+            <h5 class="name">
+                <a href="#">john doe</a>
+            </h5>
+            <span class="email">${user.email}</span>
+        </div>
+      `;
+      html += li;
+      cardAccount.innerHTML = html;
+      photoAccount.innerHTML = `<img src="images/icon/avatar-01.jpg" alt="John Doe" />`;
+      nameAccount.innerHTML = `<a class="js-acc-btn" href="#">john doe</a>`;
+    } else {
+      cardAccount.innerHTML = '<h5 class="center-align">Please Login First</h5>';
+    }
+
+  };
+
+  document.addEventListener("DOMContentLoaded", function (event) {
+      auth.onAuthStateChanged(user => {
+        if (user) {
+          console.log(user);
+          //location.replace("../dashboard.html");
+          pal.loadAccountWrap(user);
+        } else {
+          location.replace("index.html");
+          console.log("user logged out");
+        }
+      });
+
+      logout = document.querySelector('#logout-user');
+      logout.addEventListener('click', (e) => {
+        e.preventDefault();
+        auth.signOut();
+      });
+  });
+
+
+
+
+  global.$pal = pal;
+
+})(window);
+
+
 // listen for auth status changes
+
+
+
 
 
 
