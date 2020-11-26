@@ -124,7 +124,6 @@ letter-spacing: 3px; font-family: Helvetica, Arial, sans-serif; }
 #nav-list {
   margin-top: 85px;
   font-size: 1.2em;
-  font-weight: bold;
   letter-spacing: 2px;
 }
 
@@ -138,7 +137,7 @@ letter-spacing: 3px; font-family: Helvetica, Arial, sans-serif; }
 }
 
 #nav-list a span {
-  font-size: 1.8em;
+  font-size: 1.4em;
 }
 
 .navbar-info .navbar-info-email {
@@ -198,8 +197,8 @@ letter-spacing: 3px; font-family: Helvetica, Arial, sans-serif; }
 }
 
 .sectionTitle { 
-  padding: 20px; 
-  margin: 100px 10px 40px 10px;  
+  padding: 100px 20px 20px 20px; 
+  margin: 20px 10px 40px 10px;  
   font-size: 4em;
   font-weight: bold; 
   font-family: 'Roboto', sans-serif; 
@@ -287,26 +286,31 @@ letter-spacing: 3px; font-family: Helvetica, Arial, sans-serif; }
   margin-bottom: 30px;
 }
 
-#hours, #address {
-  line-height: 2;
+#emailUs{
+  padding: 40px 60px 0px 60px;
+  text-align: center;
 }
 
-#hours span, #address span, #testimonials span {
+#emailUs input, #emailUs textarea, #emailUs button {
   font-size: 1.4em;
+  margin-bottom: 25px;
 }
 
-#address p {
-  color: #A6E22B;
-  font-size: .9em;
-  line-height: 1.8;
+#emailUs .form-group .form-control, #sendEmailBtn {
+  border: 1px solid #145629;
+  border-radius: 15px;
 }
 
-#testimonials p{
-  font-style: italic;
-  margin-top: 20px;
-  font-size: .9em;
+#testimonials { 
+  margin-top: 200px;
+  padding-left: 50px;
+
 }
 
+#testimonials img{
+  padding-right: 30px;
+}
+ 
 /* END FOOTER */
 
 /********** Large devices only **********/

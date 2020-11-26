@@ -33,9 +33,9 @@ body {
 	font-weight: bold;
 	color: #557c3e;
 	text-shadow: 1px 1px 1px #222;
-  margin-top: 5px;
-  margin-bottom: 0;
-  line-height: .75;
+	margin-top: 5px;
+	margin-bottom: 0;
+	line-height: .75;
 }
 
 .navbar-brand a:hover, .navbar-brand a:focus {

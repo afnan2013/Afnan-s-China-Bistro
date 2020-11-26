@@ -71,19 +71,19 @@
               <li id="navHomeButton" class="active">
                 <a href="#">HOME</a>
               </li>
-              <li id="navMenuButton">
-                <a href="#aboutSection">ABOUT</a>
+              <li id="navAboutButton">
+                <a href="#">ABOUT</a>
               </li>
-              <li>
-                <a href="#brandSection" >BRANDS</a>
+              <li id="navBrandButton">
+                <a href="#" >BRANDS</a>
               </li>
-              <li>
+              <li id="navProductButton">
                 <a href="#productSection" >PRODUCTS</a>
               </li>
-              <li>
+              <li id="navServiceButton">
                 <a href="#serviceSection">SERVICES</a>
               </li>
-              <li>
+              <li id="navContactButton">
                 <a href="#contactSection">CONTACT</a>
               </li>
             </ul><!-- #nav-list -->
@@ -324,22 +324,19 @@
           <h3>FAQ</h3>
           <hr class="visible-xs">
         </section>
-        <section id="address" class="col-sm-5">
+        <section id="emailUs" class="col-sm-5">
           <form>
             <div class="form-group">
-              <label for="exampleInputName2">Name</label>
               <input type="text" class="form-control text-center" id="exampleInputName2" placeholder="Enter Your Name">
             </div>
             <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+              <input type="email" class="form-control text-center" id="exampleInputEmail1" placeholder="Email">
             </div>
             <div class="form-group">
-              <label for="exampleMessage">Message</label>
-              <textarea class="form-control" rows="4" placeholder="Message"></textarea>
+              <textarea class="form-control text-center" rows="4" placeholder="Message"></textarea>
             </div>
             
-            <button type="submit" class="btn btn-success">Submit</button>
+            <button id="sendEmailBtn" type="submit" class="btn btn-success text-center">Submit</button>
           </form>
           <hr class="visible-xs">
         </section>
@@ -360,12 +357,44 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 <!-- <script type="text/javascript" src="js/bootstrap.min.js"></script> -->
-  <script> 
+<script> 
   $("#exploreSite").click(function() {
     $('html, body').animate({
         scrollTop: $("#header-nav").offset().top
     }, 800);
   });
-  </script>
+
+  $("#navAboutButton").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#aboutSection").offset().top
+    }, 800);
+  });
+
+  $("#navBrandButton").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#brandSection").offset().top
+    }, 800);
+  });
+
+  $("#navProductButton").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#productSection").offset().top
+    }, 800);
+  });
+
+  $("#navServiceButton").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#serviceSection").offset().top
+    }, 800);
+  });
+
+  $("#navContactButton").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#contactSection").offset().top
+    }, 800);
+  });
+</script>
+
+
 </body>
 </html>
