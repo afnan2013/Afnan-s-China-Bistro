@@ -38,7 +38,7 @@
               <form id="loginForm">
                   <div class="form-group">
                       <label>Email Address</label>
-                      <input class="au-input au-input--full" type="email" id="login-email" name="login-email" placeholder="Email" required>
+                      <input class="au-input au-input--full" type="email" id="login-email" aria-describedby="emailHelp" name="login-email" placeholder="Email" required>
                   </div>
                   <div class="form-group">
                       <label>Password</label>
@@ -49,7 +49,7 @@
                           <input type="checkbox" name="remember">Remember Me
                       </label>
                       <label>
-                          <a href="#">Forgotten Password?</a>
+                          <a href="#" onclick="displayForgotPassword();">Forgotten Password?</a>
                       </label>
                   </div>
                   <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign in</button>
@@ -70,7 +70,7 @@
             <!-- Ends The Login Form -->
 
             <!-- Starts The SignUp Form -->
-            <div id="signup-div" class="login-form">
+            <div id="signup-div" class="login-form" style="display: none;">
               <form id="signup-form">
                   <div class="form-group">
                       <label>Username</label>
@@ -78,7 +78,7 @@
                   </div>
                   <div class="form-group">
                       <label>Email Address</label>
-                      <input class="au-input au-input--full" type="email" id="signup-email" name="signup-email" placeholder="Email" required>
+                      <input class="au-input au-input--full" type="email" aria-describedby="emailHelp" id="signup-email" name="signup-email" placeholder="Email" required>
                   </div>
                   <div class="form-group">
                       <label>Password</label>
@@ -105,6 +105,24 @@
               </div>
             </div>
             <!-- Ends The Signup Form -->
+            <!-- Starts  The Forget Password Div-->
+            <div id="forgetPass-div" class="login-form" style="display: none;">
+                <form id="forgetPass-form">
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input class="au-input au-input--full" type="email" aria-describedby="emailHelp" name="email" placeholder="Email" required>
+                    </div>
+                    <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">submit</button>
+                </form>
+                <div class="register-link">
+                  <p>
+                      Already have account?
+                      <a href="#" onclick="displayLoginDiv();">Sign In</a>
+                  </p>
+              </div>
+            </div>
+
+            <!-- Ends  The Forget Password Div-->
           </div>
         </div>
       </div>

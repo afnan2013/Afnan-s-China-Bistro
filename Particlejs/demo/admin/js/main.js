@@ -136,20 +136,20 @@
       const li = `
         <div class="image">
             <a href="#">
-                <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                <img src="images/icon/${user.imageUrl}" alt="${user.username}" />
             </a>
         </div>
         <div class="content">
             <h5 class="name">
-                <a href="#">john doe</a>
+                <a href="#">${user.username}</a>
             </h5>
             <span class="email">${user.email}</span>
         </div>
       `;
       html += li;
       cardAccount.innerHTML = html;
-      photoAccount.innerHTML = `<img src="images/icon/avatar-01.jpg" alt="John Doe" />`;
-      nameAccount.innerHTML = `<a class="js-acc-btn" href="#">john doe</a>`;
+      photoAccount.innerHTML = `<img src="images/icon/${user.imageUrl}" alt="${user.username}" />`;
+      nameAccount.innerHTML = `<a class="js-acc-btn" href="#">${user.username}</a>`;
     } else {
       cardAccount.innerHTML = '<h5 class="center-align">Please Login First</h5>';
     }
@@ -159,9 +159,24 @@
   document.addEventListener("DOMContentLoaded", function (event) {
       auth.onAuthStateChanged(user => {
         if (user) {
-          console.log(user);
+          document.querySelector(".checkifLoggedIn").style.display = "block";
+          //console.log(user);
           //location.replace("../dashboard.html");
-          pal.loadAccountWrap(user);
+
+          db.collection("users").doc(user.uid).get().then(function(doc) {
+              if (doc.exists) {
+                  //console.log("Document data:", doc.data());
+                  pal.loadAccountWrap(doc.data());
+              } else {
+                  // doc.data() will be undefined in this case
+                  console.log("No such document!");
+              }
+          }).catch(function(error) {
+              console.log("Error getting document:", error);
+          });
+
+          
+          
         } else {
           location.replace("index.html");
           console.log("user logged out");
