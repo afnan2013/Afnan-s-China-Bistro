@@ -200,8 +200,17 @@
 
 // listen for auth status changes
 
+function addMoreProduct() {
+  document.getElementById("product_add_form").style.display = "block";
+  const productAddForm = document.querySelector("#product_add_form");
 
-
+  productAddForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const userEmail = productAddForm['signup-email'].value;
+    const userPassword = productAddForm['signup-password'].value;
+    const userName = productAddForm['signup-username'].value;
+  });
+}
 
 
 
