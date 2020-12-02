@@ -122,8 +122,8 @@
 
   // pal means Prime Automation Ltd
   var pal = {};
-  var productSectionHtml = "snippets/product-snippet.html";
-
+  var addProductHtml = "snippets/add-product-snippet.html";
+  var allProductListHtml = "snippets/product-list-snippet.html";
 
   // Convenience function for inserting innerHTML for 'select'
   function insertHtml(selector, html) {
@@ -149,18 +149,48 @@
   pal.loadProductSection = () => {
     // On first load, show home view
     showLoader("#main-content");
-    $ajaxUtils.sendGetRequest(productSectionHtml, 
-      function (responseText) {
-        //console.log(responseText);
-        insertHtml("#main-content", responseText);
-    }, false);
+    // Load add product snippet
+    $ajaxUtils.sendGetRequest(addProductHtml, buildAndShowProductsHTML, false);
   };
 
+  function buildAndShowProductsHTML(addProductHtmlRes){
+    db.collection('products').get().then((snapshot) => {
+      console.log(snapshot.docs);
+      
+      // Retrieve single product snippet
+      $ajaxUtils.sendGetRequest(allProductListHtml, 
+        function (allProductListHtmlRes) {
+          // Switch CSS class active to menu button
+          //switchMenuToActive();
+          var productListViewHtml = buildProductListViewHtml(snapshot, addProductHtmlRes, allProductListHtmlRes);
+          insertHtml("#main-content", productListViewHtml);
+          
+      }, false);
+    }).catch(e => {
+      console.log(e);
+    });
+  }
 
+  function buildProductListViewHtml(snapshot, addProductHtmlRes, allProductListHtmlRes){
+    var finalHtml = addProductHtmlRes;
+    finalHtml += '<div class="container"><section class="row">';
+
+    snapshot.docs.forEach(doc => {
+      var html = allProductListHtmlRes;
+      console.log(doc.data().imageUrl);
+      html = insertProperty(html, "name", doc.data().name);
+      html = insertProperty(html, "imageUrl", doc.data().imageUrl);
+
+      finalHtml += html;
+    });
+
+    finalHtml += '</section></div>';
+
+    return finalHtml;
+  }
 
   // load Account Wrapper in the Header section 
   pal.loadAccountWrap = (user) => {
-
     const cardAccount = document.querySelector('#card-account');
     const photoAccount = document.querySelector('#photo-account');
     const nameAccount = document.querySelector('#name-account');
@@ -226,26 +256,40 @@
       });
   });
 
+  // Addition of a product 
   pal.addMoreProduct = () => {
     document.getElementById("product_add_form").style.display = "block";
     const productAddForm = document.querySelector("#product_add_form");
 
+    // Event for submiting the Add Product Form
     productAddForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const productName = productAddForm['productName'].value;
       const productDesc = productAddForm['productDesc'].value;
-      const inputImage = document.getElementById('inputFile');
+      const inputImage = document.getElementById('inputFile').files[0];
 
-      const endpoint = "upload.php";
-      const formData = new FormData();
-      //console.log(inputImage.files[0]);
+      const fileName = new Date() + "-"+ inputImage.name; 
+      console.log(inputImage.name);
 
-      formData.append("inputImage", inputImage.files[0]);
+      const metaData = {
+        contentType: inputImage.type
+      }
 
-      fetch(endpoint, {
-        method: "post",
-        body: formData
-      }).catch(console.error);
+      storage.child(fileName).put(inputImage, metaData)
+        .then(snapshot => snapshot.ref.getDownloadURL())
+        .then(url => {
+          //console.log(url);
+          db.collection('products').add({
+            name: productName,
+            description: productDesc,
+            imageUrl: url
+          }).then(() => {
+            productAddForm.reset();
+            document.getElementById("product_add_form").style.display = "none";
+            alert("Image Upload Successful");
+          });
+          
+        });
     });
   };
 
