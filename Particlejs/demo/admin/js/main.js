@@ -122,6 +122,41 @@
 
   // pal means Prime Automation Ltd
   var pal = {};
+  var productSectionHtml = "snippets/product-snippet.html";
+
+
+  // Convenience function for inserting innerHTML for 'select'
+  function insertHtml(selector, html) {
+    var targetElement = document.querySelector(selector);
+    targetElement.innerHTML = html;
+  }
+
+  // Show loading icon inside element identified by 'selector'.
+  function showLoader(selector) {
+    var html = "<div class='text-center'>";
+    html += "<img src='images/ajax-loader.gif'></div>";
+    insertHtml(selector, html);
+  }
+
+  // Return substitute of '{{propName}}'
+  // with propValue in given 'string'
+  function insertProperty(string, propName, propValue) {
+    var propToReplace = "{{" + propName +"}}";
+    string = string.replace(new RegExp(propToReplace, 'g'), propValue);
+    return string;
+  }
+
+  pal.loadProductSection = () => {
+    // On first load, show home view
+    showLoader("#main-content");
+    $ajaxUtils.sendGetRequest(productSectionHtml, 
+      function (responseText) {
+        //console.log(responseText);
+        insertHtml("#main-content", responseText);
+    }, false);
+  };
+
+
 
   // load Account Wrapper in the Header section 
   pal.loadAccountWrap = (user) => {
@@ -157,6 +192,7 @@
   };
 
   document.addEventListener("DOMContentLoaded", function (event) {
+      // listen for auth status changes
       auth.onAuthStateChanged(user => {
         if (user) {
           document.querySelector(".checkifLoggedIn").style.display = "block";
@@ -190,7 +226,28 @@
       });
   });
 
+  pal.addMoreProduct = () => {
+    document.getElementById("product_add_form").style.display = "block";
+    const productAddForm = document.querySelector("#product_add_form");
 
+    productAddForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const productName = productAddForm['productName'].value;
+      const productDesc = productAddForm['productDesc'].value;
+      const inputImage = document.getElementById('inputFile');
+
+      const endpoint = "upload.php";
+      const formData = new FormData();
+      //console.log(inputImage.files[0]);
+
+      formData.append("inputImage", inputImage.files[0]);
+
+      fetch(endpoint, {
+        method: "post",
+        body: formData
+      }).catch(console.error);
+    });
+  };
 
 
   global.$pal = pal;
@@ -198,19 +255,8 @@
 })(window);
 
 
-// listen for auth status changes
 
-function addMoreProduct() {
-  document.getElementById("product_add_form").style.display = "block";
-  const productAddForm = document.querySelector("#product_add_form");
 
-  productAddForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const userEmail = productAddForm['signup-email'].value;
-    const userPassword = productAddForm['signup-password'].value;
-    const userName = productAddForm['signup-username'].value;
-  });
-}
 
 
 
