@@ -10,3 +10,19 @@
 a.logo img {
 	width: 40%;
 }
+
+
+#productSection .add-icon {
+  background-color:transparent;
+  font-size:30px;
+  float: right;
+  cursor: pointer;
+}
+
+#productSection form{
+	clear:both;
+}
+
+.slide-div, .product-div, .update_div, #product_add_form {
+  display: none;
+}

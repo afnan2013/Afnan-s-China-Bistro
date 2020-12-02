@@ -365,22 +365,33 @@
                     <span class="sr-only">Next</span>
                   </a>
                 </div>
-
-                <div class="container">
-                    <h2>Add A Product</h2>
-                    <form>
+                
+                <section id="productSection">
+                    <div class="container">
+                        <h2>Product Settings</h2>
+                        <button class="btn btn-lg add-icon" title="Add More Product" onclick="addMoreProduct()">
+                            <i class="fa fa-plus"></i> 
+                        </button>
+                        <form id="product_add_form">
+                          <div class="form-group">
+                            <label for="exampleInputProductName1">Product Title</label>
+                            <input type="text" class="form-control" id="exampleInputProductName1" name="productName">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputDescription1">Product Description</label>
+                            <textarea name="productDesc" rows="6" class="form-control" id="exampleInputTextArea1" placeholder="Enter Description"></textarea>
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleFormControlFile1">Product Image</label>
+                            <input type="file" name="images" class="form-control-file" id="exampleFormControlFile1">
+                          </div>
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
                     
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Product Description</label>
-                        <textarea rows="6" class="form-control" id="exampleInputTextArea1" placeholder="Enter Description"></textarea>
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleFormControlFile1">Example file input</label>
-                        <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                      </div>
-                      <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
+                  </section>
                 </div>
+                
 
                 
             </div>
