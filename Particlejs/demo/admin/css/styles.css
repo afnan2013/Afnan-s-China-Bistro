@@ -12,17 +12,17 @@ a.logo img {
 }
 
 
-#productSection .add-icon {
+#productSection .add-icon, #brandSection .add-icon {
   background-color:transparent;
   font-size:30px;
   float: right;
   cursor: pointer;
 }
 
-#productSection form{
+#productSection form, #brandSection form{
 	clear:both;
 }
 
-.slide-div, .product-div, .update_div, #product_add_form {
+.slide-div, .product-div, .update_div, #product_add_form, #brand_add_form {
   display: none;
 }

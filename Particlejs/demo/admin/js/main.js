@@ -117,13 +117,19 @@
 })(jQuery);
 
 
-
+//************** all the EventListener of This Admin Panel Is written here
 (function (global){
 
+  // *******************************************//
+  //     Imortant File Locations of Snippets               
+  //********************************************//
   // pal means Prime Automation Ltd
   var pal = {};
   var addProductHtml = "snippets/add-product-snippet.html";
   var allProductListHtml = "snippets/product-list-snippet.html";
+
+  var addBrandHtml = "snippets/add-brand-snippet.html";
+  var allBrandListHtml = "snippets/brand-list-snippet.html";
 
   // Convenience function for inserting innerHTML for 'select'
   function insertHtml(selector, html) {
@@ -146,6 +152,11 @@
     return string;
   }
 
+
+  // *******************************************//
+  //          Product Section JS Starts               
+  //********************************************//
+  //**** Loading the product Section Starts ***** 
   pal.loadProductSection = () => {
     // On first load, show home view
     showLoader("#main-content");
@@ -154,9 +165,11 @@
   };
 
   function buildAndShowProductsHTML(addProductHtmlRes){
-    db.collection('products').get().then((snapshot) => {
-      console.log(snapshot.docs);
-      
+    // Retrieving Real-time Data All Product Lists From firebase firestore db
+    db.collection('products').orderBy('name').onSnapshot((snapshot) => {
+      //console.log(snapshot);
+      //let changes = snapshot.docChanges();
+      //console.log(changes);
       // Retrieve single product snippet
       $ajaxUtils.sendGetRequest(allProductListHtml, 
         function (allProductListHtmlRes) {
@@ -166,21 +179,22 @@
           insertHtml("#main-content", productListViewHtml);
           
       }, false);
-    }).catch(e => {
-      console.log(e);
     });
   }
 
   function buildProductListViewHtml(snapshot, addProductHtmlRes, allProductListHtmlRes){
     var finalHtml = addProductHtmlRes;
     finalHtml += '<div class="container"><section class="row">';
-
+    
     snapshot.docs.forEach(doc => {
-      var html = allProductListHtmlRes;
-      console.log(doc.data().imageUrl);
-      html = insertProperty(html, "name", doc.data().name);
-      html = insertProperty(html, "imageUrl", doc.data().imageUrl);
-
+      console.log(doc.id);
+      //if (snap.type == 'added'){
+        var html = allProductListHtmlRes;
+        //console.log(snap.doc.data().imageUrl);
+        html = insertProperty(html, "name", doc.data().name);
+        html = insertProperty(html, "imageUrl", doc.data().imageUrl); 
+        html = insertProperty(html, "productId", doc.id);
+      //}
       finalHtml += html;
     });
 
@@ -188,6 +202,154 @@
 
     return finalHtml;
   }
+
+  //**** Loading the product Section Ends ***** 
+
+  // Addition of a product to the FireBase FireStore and Stores the image in the Storage
+  pal.addMoreProduct = () => {
+    document.getElementById("product_add_form").style.display = "block";
+    const productAddForm = document.querySelector("#product_add_form");
+
+    // Event for submiting the Add Product Form
+    productAddForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const productName = productAddForm['productName'].value;
+      const productDesc = productAddForm['productDesc'].value;
+      const inputImage = document.getElementById('inputFile').files[0];
+
+      const fileName = new Date() + "-"+ inputImage.name; 
+      console.log(inputImage.name);
+
+      const metaData = {
+        contentType: inputImage.type
+      }
+
+      storage.child(fileName).put(inputImage, metaData)
+        .then(snapshot => snapshot.ref.getDownloadURL())
+        .then(url => {
+          //console.log(url);
+          db.collection('products').add({
+            name: productName,
+            description: productDesc,
+            imageUrl: url
+          }).then(() => {
+            productAddForm.reset();
+            document.getElementById("product_add_form").style.display = "none";
+            //alert("Image Upload Successful");
+          });
+          
+        });
+    });
+  };
+
+  pal.deleteProduct = (productId) => {
+    db.collection('products').doc(productId).delete();
+  };
+
+  // *******************************************//
+  //          Product Section JS Ends               
+  //********************************************//
+
+
+  // *******************************************//
+  //          Brand Section JS Starts               
+  //********************************************//
+  //**** Loading the Brand Section Starts ***** 
+  pal.loadBrandSection = () => {
+    // On first load, show home view
+    showLoader("#main-content");
+    // Load add brand snippet
+    $ajaxUtils.sendGetRequest(addBrandHtml, buildAndShowBrandsHTML, false);
+  };
+
+  function buildAndShowBrandsHTML(addBrandHtmlRes){
+    // Retrieving Real-time Data All Brand Lists From firebase firestore db
+    db.collection('brands').orderBy('name').onSnapshot((snapshot) => {
+      //console.log(snapshot);
+      //let changes = snapshot.docChanges();
+      //console.log(changes);
+      // Retrieve single brand snippet
+      $ajaxUtils.sendGetRequest(allBrandListHtml, 
+        function (allBrandListHtmlRes) {
+          // Switch CSS class active to menu button
+          //switchMenuToActive();
+          var brandListViewHtml = buildBrandListViewHtml(snapshot, addBrandHtmlRes, allBrandListHtmlRes);
+          insertHtml("#main-content", brandListViewHtml);
+          
+      }, false);
+    });
+  }
+
+  function buildBrandListViewHtml(snapshot, addBrandHtmlRes, allBrandListHtmlRes){
+    var finalHtml = addBrandHtmlRes;
+    finalHtml += '<div class="container"><section class="row">';
+    
+    snapshot.docs.forEach(doc => {
+      console.log(doc.id);
+      //if (snap.type == 'added'){
+        var html = allBrandListHtmlRes;
+        //console.log(snap.doc.data().imageUrl);
+        html = insertProperty(html, "name", doc.data().name);
+        html = insertProperty(html, "imageUrl", doc.data().imageUrl); 
+        html = insertProperty(html, "brandId", doc.id);
+      //}
+      finalHtml += html;
+    });
+
+    finalHtml += '</section></div>';
+
+    return finalHtml;
+  }
+
+  //**** Loading the Brand Section Ends ***** 
+
+  // Addition of a Brnad to the FireBase FireStore and Stores the image in the Storage
+  pal.addMoreBrand = () => {
+    document.getElementById("brand_add_form").style.display = "block";
+    const brandAddForm = document.querySelector("#brand_add_form");
+
+    // Event for submiting the Add Brnad Form
+    brandAddForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const brandName = brandAddForm['brandName'].value;
+      const brandDesc = brandAddForm['brandDesc'].value;
+      const brandLink = brandAddForm['brandLink'].value;
+      const inputImage = document.getElementById('inputFile').files[0];
+
+      const fileName = new Date() + "-"+ inputImage.name; 
+      console.log(inputImage.name);
+
+      const metaData = {
+        contentType: inputImage.type
+      }
+
+      storage.child(fileName).put(inputImage, metaData)
+        .then(snapshot => snapshot.ref.getDownloadURL())
+        .then(url => {
+          //console.log(url);
+          db.collection('brands').add({
+            name: brandName,
+            description: brandDesc,
+            link: brandLink,
+            imageUrl: url
+          }).then(() => {
+            productAddForm.reset();
+            document.getElementById("brand_add_form").style.display = "none";
+            //alert("Image Upload Successful");
+          });
+          
+        });
+    });
+  };
+
+  pal.deleteBrand = (brandId) => {
+    db.collection('brands').doc(brandId).delete();
+  };
+
+  // *******************************************//
+  //          Brand Section JS Ends               
+  //********************************************//
+
 
   // load Account Wrapper in the Header section 
   pal.loadAccountWrap = (user) => {
@@ -256,42 +418,7 @@
       });
   });
 
-  // Addition of a product 
-  pal.addMoreProduct = () => {
-    document.getElementById("product_add_form").style.display = "block";
-    const productAddForm = document.querySelector("#product_add_form");
-
-    // Event for submiting the Add Product Form
-    productAddForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const productName = productAddForm['productName'].value;
-      const productDesc = productAddForm['productDesc'].value;
-      const inputImage = document.getElementById('inputFile').files[0];
-
-      const fileName = new Date() + "-"+ inputImage.name; 
-      console.log(inputImage.name);
-
-      const metaData = {
-        contentType: inputImage.type
-      }
-
-      storage.child(fileName).put(inputImage, metaData)
-        .then(snapshot => snapshot.ref.getDownloadURL())
-        .then(url => {
-          //console.log(url);
-          db.collection('products').add({
-            name: productName,
-            description: productDesc,
-            imageUrl: url
-          }).then(() => {
-            productAddForm.reset();
-            document.getElementById("product_add_form").style.display = "none";
-            alert("Image Upload Successful");
-          });
-          
-        });
-    });
-  };
+  
 
 
   global.$pal = pal;
