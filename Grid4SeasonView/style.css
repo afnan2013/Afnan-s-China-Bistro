@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap");
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #111;
+  color: #fff;
+  font-family: "Balsamiq Sans", cursive;
+  position: relative;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin: 0.6rem;
+}
+
+p {
+  font-size: 2rem;
+}
+
+.Months {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px 10px;
+  z-index: 1;
+}
+
+.Months > div:nth-child(1) {
+  grid-column: 1/3;
+}
+
+.Months > div:nth-child(5){
+	grid-column: 2/4;
+}
+
+.Months > div:nth-child(7){
+	grid-column: 1/3;
+}
+
+
+.Months > div:nth-child(12) {
+  grid-column: 3/5;
+}
+
+.Winter{
+	background: url("img/winter.jpg");
+}
+
+.Fall{
+	background: url("img/fall.jpg");
+}
+
+.Spring{
+	background: url("img/spring.jpg");
+}
+
+.Summer {
+	background: url("img/summer.jpg");
+}
+
+.Months > div {
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s ease-in;
+}
+
+.bg {
+  filter: blur(8px);
+}
+
+
+.text-anime {
+  animation: text_anime 1.5s ease;
+  text-shadow: 1px 2px 3px #111;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 0.4rem;
+}
+
+
+@keyframes text_anime {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+/* Seasons */
+
+#Seasons {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  gap: 15px 10px;
+}
+.season {
+  height: 100%;
+  background-color: red;
+  z-index: 3;
+  transition: 1s ease-in;
+  /* Style Text */
+  font-size: 6rem;
+  letter-spacing: 5px;
+  text-shadow: 1px 2px 3px #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+.brand {
+	width: 250px;
+	height: 90px;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 4;
+	margin: 15px;
+	cursor: pointer;
+}
+
+.brand img {
+	height: 100%;
+	border-radius: 50%;	
+}
+
+.brand h2 {
+	font-size: 1.5rem;
+	transition: 1s ease-in;
+}
